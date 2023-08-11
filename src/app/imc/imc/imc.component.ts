@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   export class ImcComponent implements OnInit {
 
     public frmImc: FormGroup;
+    public mostrarPeso = true;
 
     constructor(private toastr: ToastrService) { 
       this.frmImc = new FormGroup({
@@ -33,6 +34,10 @@ import { ToastrService } from 'ngx-toastr';
       let imc = peso / estatura * 100;
 
       this.toastr.success('Resultado', `Su IMC es de: ${imc}`)
+    }
+
+    ocultarPeso() {
+      this.mostrarPeso = !this.mostrarPeso;
     }
 
   }

@@ -2,7 +2,7 @@
     
     <div class="card-body">
         <form [formGroup]="frmImc">
-            <div class="row">
+            <div class="row" *ngIf="mostrarPeso">
                 <div class="input-group">
                     <label>Peso (kg)</label>
                     <input type="text" class="form-control" formControlName="peso">
@@ -17,6 +17,7 @@
             <div class="row">
                 <div class="input-group">
                     <button type="button" class="btn btn-success" (click)="calcularIMC()">Calcular</button>
+                    <button type="button" class="btn btn-info" (click)="ocultarPeso()">{{ mostrarPeso ? 'Ocultar peso' : 'Mostrar Peso' }}</button>
                 </div>
             </div>
         </form>
